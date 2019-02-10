@@ -31,4 +31,23 @@ class Game{
         this.activePlayer.activeToken.drawHTMLToken();
         this.ready = true;
     }
+
+    /**
+     * Handel Key Down
+     * @param {object} event - keydown event object
+     */
+    handelkeydown(event){
+        if(this.ready){
+            let key = event.key;
+            if(key == "ArrowRight"){
+                // Move Right
+            }
+            else if(key == "ArrowDown"){
+                // Drop Token in the Collumn
+            }
+            else if(key == "ArrowLeft"){
+                // Move Left
+            }
+        }
+    }
 }
