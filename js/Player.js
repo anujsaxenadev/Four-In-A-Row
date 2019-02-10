@@ -22,4 +22,20 @@ class Player{
         }
         return tokens;
     }
+
+    /**
+     * get the next active token.
+     * @return {object} first token object in unused tokens.
+     */
+    get activeToken(){
+        return this.unusedTokens[0];
+    }
+
+    /**
+     * To get unused tokens for the Player.
+     * @return {array} Array of unused tokens
+     */
+    get unusedTokens(){
+        return this.tokens.filter(token => !token.dropped);
+    }
 }
