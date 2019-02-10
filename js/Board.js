@@ -24,4 +24,15 @@ class Board{
         }
         return spaces;
     }
+
+    /*
+     * Rendering Board
+     */
+    drawHTMLBoard(){
+        for(let i = 0; i < this.columns; i++){
+            for(let j = 0; j < this.rows; j++){
+                this.spaces[i][j].drawSVGSpace();
+            }
+        }
+    }
 }
