@@ -40,14 +40,32 @@ class Game{
         if(this.ready){
             let key = event.key;
             if(key == "ArrowRight"){
-                // Move Right
+                this.activePlayer.activeToken.moveRight(this.board.columns);
             }
             else if(key == "ArrowDown"){
-                // Drop Token in the Collumn
+                this.playToken();
             }
             else if(key == "ArrowLeft"){
-                // Move Left
+                this.activePlayer.activeToken.moveLeft();
             }
+        }
+    }
+
+    playToken(){
+        let targetSpace = null;
+        let activeToken = this.activePlayer.activeToken;
+        for(let i = 0; i < this.board.rows; i++){
+            let currentSpace = this.board.spaces[activeToken.columnLocation][i];
+            if(currentSpace.token === null){
+                targetSpace = currentSpace;
+            }
+            else{
+                break;
+            }
+        }
+        if(targetSpace != null){
+            game.ready = false;
+            activeToken.drop(targetSpace);
         }
     }
 }
