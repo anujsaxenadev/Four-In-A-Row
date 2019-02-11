@@ -18,6 +18,7 @@ class Game{
 
     /**
      * get active player
+     * @return {object} player who's turn is next.
      */
     get activePlayer(){
         return this.players.find(player => player.active);
@@ -33,7 +34,7 @@ class Game{
     }
 
     /**
-     * Handel Key Down
+     * Handel Key Down Method
      * @param {object} event - keydown event object
      */
     handelkeydown(event){
@@ -51,6 +52,9 @@ class Game{
         }
     }
 
+    /**
+     * Method for Token Logic.
+     */
     playToken(){
         let targetSpace = null;
         let activeToken = this.activePlayer.activeToken;
@@ -64,8 +68,12 @@ class Game{
             }
         }
         if(targetSpace != null){
+            const game = this;
             game.ready = false;
-            activeToken.drop(targetSpace);
+
+            activeToken.drop(targetSpace, function(){
+                game.updateGameState(activeToken, targetSpace);
+            });
         }
     }
 }
