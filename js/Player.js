@@ -38,4 +38,17 @@ class Player{
     get unusedTokens(){
         return this.tokens.filter(token => !token.dropped);
     }
+
+    /**
+     * Method for checking for remaining unused tokens for a player.
+     * @return {boolean} true if there are remaining tokens else false.
+     */
+    checkTokens(){
+        if(this.unusedTokens.length == 0){
+            return false;
+        }
+        else{
+            return true;
+        }
+    }
 }
