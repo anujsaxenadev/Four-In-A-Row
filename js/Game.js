@@ -150,10 +150,34 @@ class Game{
 
     /**
      * Method to display message on the Game.
+     * @param {string} message to display on game.
      */
     gameOver(message){
         const gameOverDiv = document.querySelector("#game-over");
         gameOverDiv.style.display = 'block';
         gameOverDiv.textContent = message;
+    }
+
+    /**
+     * Callback Method called after the token is dropped into the space.
+     * @param {object} token that was dropped.
+     * @param {object} target space in which it was dropped.
+     */
+
+    updateGameState(token, target){
+        target.mark(token);
+        if(this.checkForWin(token)){
+            this.gameOver(`${token.owner.name} wins!`);
+        }
+        else{
+            this.switchPlayers();
+            if(this.activePlayer.checkTokens()){
+                this.activePlayer.activeToken.drawHTMLToken();
+                this.ready = true;
+            }
+            else{
+                this.gameOver("No More Tokens!");
+            }
+        }
     }
 }
