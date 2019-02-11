@@ -26,10 +26,17 @@ class Token{
         return document.querySelector(`#${this.id}`);
     }
 
+    /**
+     * getter method for returning the offsetLeft Value of HTMLToken
+     * @return {number} offsetLeft Value.
+     */
     get offsetLeft(){
         return this.HTMLToken.offsetLeft;
     }
 
+    /**
+     * Method to move token to the left.
+     */
     moveLeft(){
         if(this.columnLocation > 0){
             this.HTMLToken.style.left = this.offsetLeft - 76;
@@ -37,6 +44,9 @@ class Token{
         }
     }
 
+    /**
+     * Method to move token to the Right.
+     */
     moveRight(columns){
         if(this.columnLocation < columns - 1){
             this.HTMLToken.style.left = this.offsetLeft + 76;
@@ -44,6 +54,11 @@ class Token{
         }
     }
 
+    /**
+     * Method to drop the current active token to the target.
+     * @param {object} target space.
+     * @param {callback} callback function to the drop method.
+     */
     drop(target, reset){
         this.dropped = true;
         $(`#${this.id}`).animate({
