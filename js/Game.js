@@ -133,4 +133,18 @@ class Game{
         }
         return win;
     }
+
+    /**
+     * Method to switch players for next turn.
+     */
+    switchPlayers(){
+        for(let player of this.players){
+            if(player.active == true){
+                player.active = false;
+            }
+            else{
+                player.active = true;
+            }
+        }
+    }
 }
