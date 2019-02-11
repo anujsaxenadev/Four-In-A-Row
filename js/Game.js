@@ -77,6 +77,9 @@ class Game{
         }
     }
 
+    /**
+     * Method to check for which Player wins.
+     */
     checkForWin(target){
         const owner = target.owner;
         let win = false;
