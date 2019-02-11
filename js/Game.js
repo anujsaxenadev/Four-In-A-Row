@@ -76,4 +76,58 @@ class Game{
             });
         }
     }
+
+    checkForWin(target){
+        const owner = target.owner;
+        let win = false;
+
+        //vertical
+        for(let i = 0 ; i < this.board.columns; i++){
+            for(let j = 0; j < this.board.rows - 3; j++){
+                if( this.board.spaces[i][j].owner == owner &&
+                    this.board.spaces[i][j + 1].owner == owner &&
+                    this.board.spaces[i][j + 2].owner == owner &&
+                    this.board.spaces[i][j + 3].owner == owner){
+                        win = true;
+                    }
+            }
+        }
+
+        //horizontal
+        for(let i = 0; i < this.board.columns - 3; i++){
+            for(let j = 0; j < this.board.rows; j++){
+                if( this.board.spaces[i][j].owner == owner &&
+                    this.board.spaces[i + 1][j].owner == owner &&
+                    this.board.spaces[i + 2][j].owner == owner &&
+                    this.board.spaces[i + 3][j].owner == owner){
+                        win = true;
+                    }
+            }
+        }
+
+        //diagonal
+        for(let i = 3; i < this.board.columns; i++){
+            for(let j = 3; j < this.board.rows; j++){
+                if( this.board.spaces[i][j].owner == owner &&
+                    this.board.spaces[i - 1][j - 1].owner == owner &&
+                    this.board.spaces[i - 2][j - 2].owner == owner &&
+                    this.board.spaces[i - 3][j - 3].owner == owner){
+                        win = true;
+                    }
+            }
+        }
+
+        // other diagonal
+        for(let i = 3; i < this.board.columns; i++){
+            for(let j = 0; j < this.board.rows - 3; j++){
+                if( this.board.spaces[i][j].owner == owner &&
+                    this.board.spaces[i - 1][j + 1].owner == owner &&
+                    this.board.spaces[i - 2][j + 2].owner == owner &&
+                    this.board.spaces[i - 3][j + 3].owner == owner){
+                        win = true;
+                    }
+            }
+        }
+        return win;
+    }
 }
