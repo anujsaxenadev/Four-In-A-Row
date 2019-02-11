@@ -1,37 +1,20 @@
-## Welcome to GitHub Pages
+# Four In A Row
 
-You can use the [editor on GitHub](https://github.com/anujsaxenadev/Four_In_A_Row/edit/master/README.md) to maintain and preview the content for your website in Markdown files.
+An __Object Oriented Javascript__ Implementation of a Two Player Game just like [Connect Four](https://en.m.wikipedia.org/wiki/Connect_Four).
 
-Whenever you commit to this repository, GitHub Pages will run [Jekyll](https://jekyllrb.com/) to rebuild the pages in your site, from the content in your Markdown files.
+#### There are five class files -
+| Class File                                                                            | What's that for ?	          |
+|---------------------------------------------------------------------------------------|:---------------------------:|
+| [Board.js](https://github.com/anujsaxenadev/Four-In-A-Row/blob/master/js/Board.js)    | For Board Object 	          |
+| [Game.js](https://github.com/anujsaxenadev/Four-In-A-Row/blob/master/js/Game.js)      | For Game Object  	          |
+| [Player.js](https://github.com/anujsaxenadev/Four-In-A-Row/blob/master/js/Player.js)  | For Each Player  	          |
+| [Space.js](https://github.com/anujsaxenadev/Four-In-A-Row/blob/master/js/Space.js)    | For Each Space in the Board |
+| [Token.js](https://github.com/anujsaxenadev/Four-In-A-Row/blob/master/js/Token.js)    | For Each Token   	          |
 
-### Markdown
+##### and one main file [app.js](https://github.com/anujsaxenadev/Four-In-A-Row/blob/master/js/app.js).
 
-Markdown is a lightweight and easy-to-use syntax for styling your writing. It includes conventions for
+Visit -> [Four In A Row](https://anujsaxenadev.github.io/Four-In-A-Row/).
 
-```markdown
-Syntax highlighted code block
+![Four In A Row](https://raw.githubusercontent.com/anujsaxenadev/Four-In-A-Row/master/FourInARow.png "Four In A Row")
 
-# Header 1
-## Header 2
-### Header 3
 
-- Bulleted
-- List
-
-1. Numbered
-2. List
-
-**Bold** and _Italic_ and `Code` text
-
-[Link](url) and ![Image](src)
-```
-
-For more details see [GitHub Flavored Markdown](https://guides.github.com/features/mastering-markdown/).
-
-### Jekyll Themes
-
-Your Pages site will use the layout and styles from the Jekyll theme you have selected in your [repository settings](https://github.com/anujsaxenadev/Four_In_A_Row/settings). The name of this theme is saved in the Jekyll `_config.yml` configuration file.
-
-### Support or Contact
-
-Having trouble with Pages? Check out our [documentation](https://help.github.com/categories/github-pages-basics/) or [contact support](https://github.com/contact) and we’ll help you sort it out.
