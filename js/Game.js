@@ -147,4 +147,13 @@ class Game{
             }
         }
     }
+
+    /**
+     * Method to display message on the Game.
+     */
+    gameOver(message){
+        const gameOverDiv = document.querySelector("#game-over");
+        gameOverDiv.style.display = 'block';
+        gameOverDiv.textContent = message;
+    }
 }
