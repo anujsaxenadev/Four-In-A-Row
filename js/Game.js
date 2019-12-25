@@ -176,7 +176,7 @@ class Game{
                 this.ready = true;
             }
             else{
-                this.gameOver("No More Tokens!");
+                this.gameOver("It is a Draw!");
             }
         }
     }
